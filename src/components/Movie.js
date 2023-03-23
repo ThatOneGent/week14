@@ -22,3 +22,52 @@
 //Call reviewForm component
 
 //end movie div
+
+
+import React from "react";
+import ReviewList from "./ReviewList";
+import SRating from "./stars";
+
+export default class Movie extends React.Component{
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            title: props.title,
+            image: props.image,
+            syn: props.syn,
+            srating: props.srating,
+            reviews: props.reviews
+        }
+
+    }
+    render() {
+
+        return (
+
+            <React.StrictMode>
+
+            <div className='card'> 
+            <div className="card-Body">
+            <h3 className="card-title">{this.state.title}</h3>
+            <div>
+             <img src={this.state.image}></img>
+            </div>
+            <div>{this.state.syn}</div>
+
+            <ReviewList reviews={this.state.reviews}/>
+            <SRating srating={this.state.srating}/>
+            
+            <div></div>
+            </div>
+            </div>
+
+
+            </React.StrictMode>
+        );
+
+
+    }
+
+}

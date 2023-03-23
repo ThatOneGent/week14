@@ -10,3 +10,4 @@
 //Form field for text
 // allows for pushing to movielist array for current movie
     // addes to review text array
+// push a new star rating as well.
