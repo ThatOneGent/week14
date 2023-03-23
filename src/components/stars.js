@@ -1,0 +1,1 @@
+//  a one to five-star rating component that allows users to rate something 
