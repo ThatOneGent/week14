@@ -4,3 +4,9 @@
  All this data can be stored in an array, no networking or database needed for this assignment.
 
 */
+
+//review form called by movie.js
+
+//Form field for text
+// allows for pushing to movielist array for current movie
+    // addes to review text array
