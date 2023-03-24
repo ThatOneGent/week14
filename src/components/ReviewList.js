@@ -4,23 +4,26 @@
 //cycles through current movie's review array in data
 import React from 'react';
 import Review from './Review';
+import SRating from './stars';
 
-export default class ReviewList extends React.Component{
+export default class ReviewList extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.state ={
-            reviews: props.reviews
+        this.state = {
+            reviews: props.reviews,
+            srating: props.srating
         }
     }
 
     render() {
 
-        return(
-
-            <Review reviews={this.state.reviews}/>
-
+        return (
+            <div className="card">
+                <Review reviews={this.state.reviews} />
+                <SRating srating={this.state.srating} />
+            </div>
         );
     }
 

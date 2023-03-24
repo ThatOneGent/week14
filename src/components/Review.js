@@ -20,7 +20,9 @@ export default class Review extends React.Component{
         if(this.state.reviews){
 
         array = this.state.reviews.map( (review,index)=>
-         <div>{review}</div>
+         <React.StrictMode>
+         <div className='card-text'>{review}</div> <hr/>
+        </React.StrictMode>
         
         
         )
@@ -30,8 +32,8 @@ export default class Review extends React.Component{
 
         return (
             <React.StrictMode>
-            <div>Review goes here</div>
-            <div>{array}</div>
+            <div className='card-header'>Reviews</div>
+            <div className='card-body'>{array}</div>
             </React.StrictMode>
         );
     }

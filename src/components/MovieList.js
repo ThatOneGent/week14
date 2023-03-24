@@ -28,15 +28,17 @@ export default class MovieList extends React.Component {
 
         let movies = [
             {
-                title: "Movie 1",
+                title: "Dune 1",
+                year: 2023,
                 image: "./images/1.jpg",
-                syn: "movie plot 1",
-                srating: [5,0,],
+                syn: "A noble family becomes embroiled in a war for control over the galaxy's most valuable asset while its heir becomes troubled by visions of a dark future.",
+                srating: [8,],
                 reviews: ["text review","text review 2"]
 
             }, 
             {
                 title: "Movie 2",
+                year: 2023,
                 image: "./images/2.jpg",
                 syn: "movie plot 2",
                 srating: [5,0,],
@@ -45,6 +47,7 @@ export default class MovieList extends React.Component {
             }, 
             {
                 title: "Movie 3",
+                year: 2023,
                 image: "./images/3.jpg",
                 syn: "movie plot 3",
                 srating: [5,0,],
@@ -53,6 +56,7 @@ export default class MovieList extends React.Component {
             }, 
             {
                 title: "Movie 4",
+                year: 2023,
                 image: "./images/4.jpg",
                 syn: "movie plot 4",
                 srating: [5,0,],
@@ -61,6 +65,7 @@ export default class MovieList extends React.Component {
             }, 
             {
                 title: "Movie 5",
+                year: 2023,
                 image: "./images/5.jpg",
                 syn: "movie plot 5",
                 srating: [5,0,],
@@ -73,7 +78,7 @@ export default class MovieList extends React.Component {
         let array;
 
         array = movies.map((movies, index) =>
-            <Movie title={movies.title} image={movies.image} syn={movies.syn} srating={movies.srating} reviews={movies.reviews} />
+            <Movie title={movies.title} image={movies.image} syn={movies.syn} srating={movies.srating} reviews={movies.reviews} year={movies.year}/>
         )
 
 
@@ -82,9 +87,10 @@ export default class MovieList extends React.Component {
         return (
 
             <React.StrictMode>
+                <div className="container" > 
 
                 <div> {array}</div>
-
+</div>
             </React.StrictMode>
 
 

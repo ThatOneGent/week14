@@ -32,11 +32,13 @@ export default class SRating extends React.Component{
 
         return(
             <React.StrictMode>
-            <div>Star Value</div>
-            <div>{starAve}</div>
-            <div>{this.state.srating.length}</div>
-           
+             <div className='card-footer'>   
             
+            <div className='row'><div className='col-sm-3'>Current Rating (1-10)</div>
+            <div className='col-sm-2'>{starAve}/10</div>
+            <div className='col-sm-3'>{this.state.srating.length} review</div>
+           </div>
+            </div>
             </React.StrictMode>
         );
     }
