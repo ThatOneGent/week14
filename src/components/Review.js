@@ -9,32 +9,20 @@ export default class Review extends React.Component{
 
         this.state = {
             reviews: props.reviews
+            
         }
         
     }
 
     render() {
 
-        let array;
-
-        if(this.state.reviews){
-
-        array = this.state.reviews.map( (review,index)=>
-         <React.StrictMode>
-         <div className='card-text'>{review}</div> <hr/>
-        </React.StrictMode>
-        
-        
-        )
-
-        }
+       
 
 
         return (
-            <React.StrictMode>
-            <div className='card-header'>Reviews</div>
-            <div className='card-body'>{array}</div>
-            </React.StrictMode>
+            
+            <div>{this.state.reviews}</div>
+            
         );
     }
 

@@ -45,29 +45,35 @@ export default class Movie extends React.Component {
 
     }
     render() {
-
+        /*   
+          let tempcomments = this.state.title;
+          setTimeout(() => this.setState({title: 'Not The title' },
+          () => setTimeout(() => this.setState({title: tempcomments}), 2000 )), 2000);
+  
+   */
         return (
 
             <React.StrictMode>
 
                 <div className='card w-75 border-color-secondary'>
-                    <h3 className="card-header">{this.state.title} ({this.state.year})</h3>
+                    <h3 className="card-header bg-success">{this.state.title} ({this.state.year})</h3>
                     <div className="card-body">
 
                         <div className="text-center">
                             <img src={this.state.image}></img>
                         </div>
-
+                        <br />
                         <p className="card-text">{this.state.syn}</p>
-                        <hr/>
-                        
-                        <ReviewList reviews={this.state.reviews} srating={this.state.srating}/>
-                        
-                        
-                        <hr/>
-                        <ReviewForm reviews={this.state.reviews} srating={this.state.srating}/>
+                        <br />
+
+                        <ReviewList reviews={this.state.reviews} srating={this.state.srating} />
+
+
+                        <hr />
+                        <ReviewForm reviews={this.state.reviews} srating={this.state.srating} />
                     </div>
                 </div>
+                <br />
 
 
             </React.StrictMode>

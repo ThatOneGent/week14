@@ -19,9 +19,36 @@ export default class ReviewList extends React.Component {
 
     render() {
 
+        let array;
+
+        if (this.state.reviews) {
+
+            if (this.state.reviews.length > 1) {
+
+                array = this.state.reviews.map((review, index) =>
+                    <React.StrictMode>
+                        <Review key={index} reviews={review} />
+                        <hr />
+                    </React.StrictMode>
+                )
+            }
+            else {
+                array = this.state.reviews.map((review, index) =>
+                <React.StrictMode>
+                    <Review key={index} reviews={review} />
+                </React.StrictMode>
+            )
+
+            }
+
+        }
+
         return (
             <div className="card">
-                <Review reviews={this.state.reviews} />
+                <div className='card-header bg-warning'>Reviews</div>
+                <div className='card-body'>
+                    {array}
+                </div>
                 <SRating srating={this.state.srating} />
             </div>
         );
