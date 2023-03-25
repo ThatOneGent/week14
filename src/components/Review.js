@@ -15,9 +15,8 @@ export default class Review extends React.Component{
     }
 
     render() {
-
-       
-
+     
+        // it's passed the review text and renders it in a specific way
 
         return (
             

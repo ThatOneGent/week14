@@ -41,58 +41,54 @@ export default class Movie extends React.Component {
             syn: props.syn,
             srating: props.srating,
             reviews: props.reviews,
-            uindex:props.uindex
+            uindex: props.uindex
+            
         }
 
-    } 
+    }
 
-   
+
 
 
     render() {
-        /*   
-          let tempcomments = this.state.title;
-          setTimeout(() => this.setState({title: 'Not The title' },
-          () => setTimeout(() => this.setState({title: tempcomments}), 2000 )), 2000);
-  
-   */ 
-  const setNewReview = (newReview)=> {
 
-    this.setState(state => ({reviews: newReview }))
-    
 
-    }
+        // function that is passed in as a prop for review form
+        // this allows for state update after user submits changes.  
+        const setNewReview = (newReview) => {
 
-    const setNewStar = (newStar) => {
-       // this.setState(state => ({srating: newStar}))
-    }
+            this.setState(state => ({ reviews: newReview }))
+        }
+
+        //yeah, this one doesnt do anything because updating the state for newRevReview, updates all of the state again??
+        const setNewStar = (newStar) => {
+            // this.setState(state => ({srating: newStar}))
+        }
 
         return (
+            // return basic structure of the card for the movie, call review list and review form
 
-            
+            <div className='card w-75 border-color-secondary'>
+                <h3 className="card-header bg-success">{this.state.title} ({this.state.year})</h3>
+                <div className="card-body">
 
-                <div className='card w-75 border-color-secondary'>
-                    <h3 className="card-header bg-success">{this.state.title} ({this.state.year})</h3>
-                    <div className="card-body">
-
-                        <div className="text-center">
-                            <img src={this.state.image}></img>
-                        </div>
-                        <br />
-                        <p className="card-text">{this.state.syn}</p>
-                        <br />
-
-                        <ReviewList reviews={this.state.reviews} srating={this.state.srating} />
-
-
-                        <hr />
-                        <ReviewForm setNewReview={setNewReview} reviews={this.state.reviews} srating={this.state.srating} uindex={this.state.uindex}/>
+                    <div className="text-center">
+                        <img src={this.state.image}></img>
                     </div>
+                    <br />
+                    <p className="card-text">{this.state.syn}</p>
+                    <br />
+
+                    <ReviewList reviews={this.state.reviews} srating={this.state.srating} />
+
+                    <hr />
+                    <ReviewForm setNewReview={setNewReview} reviews={this.state.reviews} srating={this.state.srating} uindex={this.state.uindex} />
                 </div>
-                
+            </div>
 
 
-            
+
+
         );
 
 

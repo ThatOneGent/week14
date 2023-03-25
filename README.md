@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Week 14 Prominero Coding Assignment
+
+This coding assignment is a basic movie rating app that takes an array of movies and their subsequent data and displays them on a single page. You can then review and rate each movie independently. Refreshing the page will cause data to revert back to zero.
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
