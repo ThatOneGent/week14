@@ -27,7 +27,7 @@
 import React from "react";
 import ReviewForm from "./ReviewForm";
 import ReviewList from "./ReviewList";
-import SRating from "./stars";
+
 
 export default class Movie extends React.Component {
 
@@ -40,20 +40,36 @@ export default class Movie extends React.Component {
             image: props.image,
             syn: props.syn,
             srating: props.srating,
-            reviews: props.reviews
+            reviews: props.reviews,
+            uindex:props.uindex
         }
 
-    }
+    } 
+
+   
+
+
     render() {
         /*   
           let tempcomments = this.state.title;
           setTimeout(() => this.setState({title: 'Not The title' },
           () => setTimeout(() => this.setState({title: tempcomments}), 2000 )), 2000);
   
-   */
+   */ 
+  const setNewReview = (newReview)=> {
+
+    this.setState(state => ({reviews: newReview }))
+    
+
+    }
+
+    const setNewStar = (newStar) => {
+       // this.setState(state => ({srating: newStar}))
+    }
+
         return (
 
-            <React.StrictMode>
+            
 
                 <div className='card w-75 border-color-secondary'>
                     <h3 className="card-header bg-success">{this.state.title} ({this.state.year})</h3>
@@ -70,13 +86,13 @@ export default class Movie extends React.Component {
 
 
                         <hr />
-                        <ReviewForm reviews={this.state.reviews} srating={this.state.srating} />
+                        <ReviewForm setNewReview={setNewReview} reviews={this.state.reviews} srating={this.state.srating} uindex={this.state.uindex}/>
                     </div>
                 </div>
-                <br />
+                
 
 
-            </React.StrictMode>
+            
         );
 
 

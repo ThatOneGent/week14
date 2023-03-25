@@ -13,8 +13,7 @@
 // push a new star rating as well.
 
 import React from "react";
-import Review from "./Review";
-import {useState} from "react";
+
 
 
 export default class ReviewForm extends React.Component {
@@ -24,33 +23,46 @@ export default class ReviewForm extends React.Component {
         this.state = {
             reviews: props.reviews,
             srating: props.srating,
-            count: 0
+            count: 0,
+            setNewReview: props.setNewReview,
+            setNewStar: props.setNewStar,
+            uindex: props.uindex
         }
         this.submitReview = this.submitReview.bind(this);
+        
     }
 
     submitReview() {
+
+   
     
 
-        this.setState(state => ({ count: state.count + 1 }))
+       this.setState(state => ({ count: state.count + 1 }))
 
-        const iReview = document.getElementById("reviewText").value;
-        const iStar = document.getElementById("userStar").value;
+        const iReview = document.getElementById(`reviewText-${this.state.uindex}`).value;
+        const iStar = parseInt(document.getElementById(`userStar-${this.state.uindex}`).value);
 
         console.log(iReview);
-        console.log(iStar);
-        
+        console.log(iStar);        
 
-        let newArray = this.state.reviews;
-        newArray.push(iReview);
-        
+        let newRevArray = this.state.reviews;
+        newRevArray.push(iReview);
 
-        console.log(newArray);
-        console.log("review state     " + this.state.reviews);
+        let newStarArray = this.state.srating;
+        newStarArray.push(iStar);
+
+
+        console.log(newRevArray);
+        //console.log("review state     " + this.state.reviews);
+        console.log(newStarArray)
+
 
 
        // this.setState({reviews: newArray});
-        this.setState({ reviews: newArray });
+        //this.setState({ reviews: newRevArray });
+        
+        this.state.setNewReview(newRevArray);
+        //this.state.setNewStar(newStarArray);
         
        
 
@@ -70,10 +82,11 @@ export default class ReviewForm extends React.Component {
 
 
     }
+    
 
     render() {
 
-
+      
         return (
             <div className="container-fluid">
                 <div className="">
@@ -81,12 +94,12 @@ export default class ReviewForm extends React.Component {
                         <h5 className="card-header bg-info">Leave a Review</h5>
                         <div className="form-group">
                             <div className="row">
-                                <input id="reviewText" className="form-control " type="text" name="uReview" placeholder="Type your review here" />
+                                <input id={`reviewText-${this.state.uindex}`} className="form-control " type="text" name="uReview" placeholder="Type your review here" />
                             </div>
                             <div className="row">
                                 <div className="col-sm-3 gx-0">
-                                    <select className="form-select" id="userStar">
-                                        <option defaultValue>Rating 1-10</option>
+                                    <select className="form-select" id={`userStar-${this.state.uindex}`}> 
+                                        <option>Rating 1-10</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>

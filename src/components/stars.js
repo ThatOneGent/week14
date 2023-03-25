@@ -20,18 +20,19 @@ export default class SRating extends React.Component{
         let starSum=0;
 
         if(this.state.srating){
+            console.log("srating hit = " + this.state.srating)
         
         for(let i=0; i <this.state.srating.length; i++){
             starSum += this.state.srating[i];
        }
 
-        starAve = starSum / this.state.srating.length;
+        starAve = Math.round((starSum / this.state.srating.length) *100)/100;
 
         
         };
 
         return(
-            <React.StrictMode>
+            
              <div className='card-footer'>   
             
             <div className='row'><div className='col-sm-3'>Current Rating (1-10)</div>
@@ -39,7 +40,7 @@ export default class SRating extends React.Component{
             <div className='col-sm-3'>{this.state.srating.length} review</div>
            </div>
             </div>
-            </React.StrictMode>
+            
         );
     }
 

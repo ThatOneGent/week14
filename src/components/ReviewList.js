@@ -26,18 +26,18 @@ export default class ReviewList extends React.Component {
             if (this.state.reviews.length > 1) {
 
                 array = this.state.reviews.map((review, index) =>
-                    <React.StrictMode>
+                    <div>
                         <Review key={index} reviews={review} />
                         <hr />
-                    </React.StrictMode>
+                    </div>
                 )
             }
             else {
                 array = this.state.reviews.map((review, index) =>
-                <React.StrictMode>
+                
                     <Review key={index} reviews={review} />
-                </React.StrictMode>
-            )
+                
+            );
 
             }
 
