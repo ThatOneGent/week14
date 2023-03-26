@@ -36,7 +36,7 @@ export default class ReviewForm extends React.Component {
     //onclick function
     submitReview() {
 
-        this.setState(state => ({ count: state.count + 1 }))  // test code
+        //this.setState(state => ({ count: state.count + 1 }))  // test code
 
         //setting the value of two items based on value of user input
         //element ID is based off unique index assigned to the movie

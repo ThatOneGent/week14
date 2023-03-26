@@ -61,6 +61,9 @@ export default class Movie extends React.Component {
         }
 
         //yeah, this one doesnt do anything because updating the state for newRevReview, updates all of the state again??
+             //Realized why it updates and is not needed... My updating of state on movie as a parent trickles down to reviewlist AND stars automatically...
+             //Has I nested the review form within reviewlist, or pulled stars from it, it may have worked differently.
+             //Since I WANT to update both at the same time, this works fine. 
         const setNewStar = (newStar) => {
             // this.setState(state => ({srating: newStar}))
         }
